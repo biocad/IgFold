@@ -6,7 +6,7 @@ def get_fasta_chain_seq(
     chain_id,
 ):
     for chain in SeqIO.parse(fasta_file, 'fasta'):
-        if ":{}".format(chain_id) in chain.id:
+        if "{}".format(chain_id) in chain.id:
             return str(chain.seq)
 
 

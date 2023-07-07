@@ -55,6 +55,7 @@ class IgFoldRunner():
 
             model_ckpts = list(sorted(model_ckpts))[:num_models]
 
+        assert len(model_ckpts) == num_models
         print(f"Loading {num_models} IgFold models...")
 
         device = torch.device(
