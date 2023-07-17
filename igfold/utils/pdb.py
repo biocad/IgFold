@@ -457,7 +457,7 @@ def save_PDB(
         for a, atom in enumerate(residue):
             if AA == "GLY" and atoms[a] == "CB": continue
             x, y, z = atom
-            chain_id = chains[np.where(np.array(delim) - r > 0)[0][0]]
+            chain_id = chains[np.where(np.array(delim) - k > 0)[0][0]]
             pdb_string += "ATOM  %5d  %-2s  %3s %s%4d    %8.3f%8.3f%8.3f  %4.2f  %4.2f\n" % (
                 k + 1, atoms[a], AA, chain_id, r + 1, x, y, z, 1, error[r])
             k += 1

@@ -100,7 +100,7 @@ def process_prediction(
     seq_dict = get_fasta_chain_dict(fasta_file)
     full_seq = "".join(list(seq_dict.values()))
     chains = list(seq_dict.keys())
-    delims = np.cumsum([len(s) for s in seq_dict.values()]).tolist()
+    delims = np.cumsum([len(s) * 5 - s.count('G') for s in seq_dict.values()]).tolist()
 
     write_pdb = not do_refine or use_openmm
     pdb_string = save_PDB(
